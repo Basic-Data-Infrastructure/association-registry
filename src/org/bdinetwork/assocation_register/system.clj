@@ -1,9 +1,9 @@
 (ns org.bdinetwork.assocation-register.system
-  (:require [org.bdinetwork.assocation-register.data-source :as ds]
+  (:require [buddy.core.keys :refer [private-key]]
+            [clojure.string :as string]
+            [org.bdinetwork.assocation-register.data-source :as ds]
             [org.bdinetwork.assocation-register.web :as web]
-            [ring.adapter.jetty :refer [run-jetty]]
-            [buddy.core.keys :refer [private-key]]
-            [clojure.string :as string]))
+            [ring.adapter.jetty :refer [run-jetty]]))
 
 (defn x5c
   "Read chain file into vector of certificates."
@@ -17,7 +17,7 @@
 
 (defn run-system
   []
-  (let [handler (web/make-handler (ds/read-data-source "test/example-config.yml")
+  (let [handler (web/make-handler (ds/yaml-in-memory-data-source-factory "test/example-config.yml")
                                   {:server-id "EU.EORI.SERVER"
                                    :x5c (x5c "test/pem/server.x5c.pem")
                                    :private-key (private-key "test/pem/server.key.pem")})]
