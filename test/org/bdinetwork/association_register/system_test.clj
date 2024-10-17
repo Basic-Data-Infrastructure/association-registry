@@ -7,6 +7,8 @@
             [clojure.test :refer [deftest is]]
             [nl.jomco.http-status-codes :as http-status]))
 
+;; TODO: make port numbers configurable for tests / automatically use free port
+
 (def client-config
   {:ishare/satellite-base-url "http://localhost:8080"
    :ishare/satellite-id       "EU.EORI.SERVER"
