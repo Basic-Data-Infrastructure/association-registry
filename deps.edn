@@ -8,7 +8,7 @@
 {:deps  {org.bdinetwork/clj-ishare-jwt                  {:git/url "https://github.com/Basic-Data-Infrastructure/clj-ishare-jwt"
                                                          :git/sha "65ed4c07333994faf98a6e6309800338c3577d4c"}
          org.bdinetwork/service-provider-authentication {:git/url "https://github.com/Basic-Data-Infrastructure/service-provider-authentication"
-                                                         :git/sha "0c2dcb4c09fe7fa5069353bb94e18c61f2f97608"}
+                                                         :git/sha "b2b86c88f551a82407055b85e26aef423f3a77e3"}
          nl.jomco/with-resources                        {:mvn/version "0.1.1"}
          nl.jomco/openapi-v3-validator                  {:mvn/version "0.2.1"}
          clj-commons/clj-yaml                           {:mvn/version "1.0.27"}
@@ -28,7 +28,7 @@
  {:dev      {:extra-paths ["test" "dev"]}
   :test     {:extra-deps {lambdaisland/kaocha              {:mvn/version "RELEASE"}
                           org.bdinetwork/clj-ishare-client {:git/url "https://github.com/Basic-Data-Infrastructure/clj-ishare-client"
-                                                            :git/sha "31aac30ab67661ca67273196fd901291f119b1d2"}}
+                                                            :git/sha "a6d4a422a8bb72ca41453c4c6f855553d4cb538e"}}
              :main-opts  ["-m" "kaocha.runner"]}
   :lint     {:extra-deps {clj-kondo/clj-kondo {:mvn/version "RELEASE"}}
              :main-opts  ["-m" "clj-kondo.main" "--lint" "src" "test"]}
